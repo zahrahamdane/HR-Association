@@ -31,11 +31,11 @@ public class EmployeeController {
      */
 
     @GetMapping("/employee/{id}")
-    public Optional<Employee> getEmployee(@PathVariable("id")final Long id) {
+    public Employee getEmployee(@PathVariable("id") final Long id) {
         Optional<Employee> employee = employeeService.getEmployee(id);
         if(employee.isPresent()) {
             return employee.get();
-        }else {
+        } else {
             return null;
         }
     }
